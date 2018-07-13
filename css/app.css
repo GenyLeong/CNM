@@ -1,0 +1,8 @@
+.credit{
+    color: #000;
+    text-decoration: none;    
+}
+
+.credit:hover{
+    text-decoration: underline;
+}

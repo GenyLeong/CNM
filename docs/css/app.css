@@ -6,3 +6,17 @@
 .credit:hover{
     text-decoration: underline;
 }
+
+.resources span{
+    font-weight: 600;    
+}
+
+.resources a{
+        color: #6b6b6b;
+        text-decoration:none;
+        font-style: italic;
+}
+
+.resources a:hover{
+    text-decoration:underline;
+}

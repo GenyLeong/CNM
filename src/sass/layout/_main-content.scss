@@ -1,0 +1,109 @@
+/*---------------------------------------------------------------------------*
+ * MainContent
+----------------------------------------------------------------------------*/
+.MainContent {
+  // padding: 10px 15px 0 15px;  
+  // display: none;
+  // max-width: 960px;
+  margin: auto;
+  // background: #fff;
+  @include breakpoint(phablet) {
+    // padding-left: 38px;    
+  }
+  &.is-visible {
+    display: block;
+  }
+  &-header {
+  }
+  &-content {
+    // max-width: 800px;
+    margin: auto;
+  }
+
+ .link {
+  fill: none;
+  stroke: #ff7070;
+  stroke-width: 1px;
+}
+
+.link-click{
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.text-click{
+  text{
+    font: bold 13px sans-serif; 
+    fill: #000;
+  }
+}
+
+circle {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+text {
+  fill: #6b6b6b;
+  font: 13px sans-serif;
+  pointer-events: none;
+}
+
+#area2{
+  svg{
+    overflow: unset;
+    touch-action: none;
+  }
+  small{
+    font-size: 13px;
+  }
+}
+}
+
+.image{
+  cursor:pointer;
+}
+
+.tip {
+    position: absolute;
+    background: #000000d9;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    top: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    font-size: 12px;
+    width:auto;
+    max-width: 180px;
+  p{
+    margin:0;
+    font-size:13px;
+  }
+  @include breakpoint(phablet) {
+    width:auto;
+    max-width:300px;
+  }
+}
+
+.resources{
+  span{
+    font-weight: 600;    
+  }
+  a{
+    color: #6b6b6b;
+    text-decoration:none;
+    font-style: italic;
+    &:hover{
+      text-decoration:underline;
+    }
+  }
+} 
+
+/*---------------------------------------------------------------------------*
+* Fin:MainContent
+----------------------------------------------------------------------------*/

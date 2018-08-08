@@ -3,9 +3,41 @@ function newFunction() {
     return (function () {
         var height_size = window.innerHeight;
         var width_size = window.innerWidth, margin = { top: 20, right: 20, bottom: 50, left: 20 }, width = width_size - margin.right - margin.left, height = height_size - margin.top - margin.bottom;
+
+        var change_distance = d3.select('#area1')
+                                .append('input')
+                                .classed('change_distance', true)
+                                .attr('type', 'number')
+
+        
+    // $(".change_distance").keypress(function(e){
+    //     if (e.which == 13) {
+
+    //         var value = $(".change_distance").val()
+    //         function linkDistance(){
+    //                 localStorage.setItem('change_distance', value)
+    //                 location.reload()
+    //                 return localStorage.getItem('change_distance')
+    //                 console.log(value)
+    //                     // return $(".change_distance").val()
+    //             }
+    //     }
+        
+    //     else{                
+    //         function linkDistance(){
+    //             return width/2
+    //         }
+    //     }
+    // }) 
+
+    // $(".change_distance").val() == document.URL.split('#')[1]
+
+        var param = document.URL.split('#')[1] || width/2;
         var links = json.start();
-        var jsond3 = json.start();
+        var jsond3 = json.start();        
         var nodes = {};
+
+
         // Compute the distinct nodes from the links.
         links.forEach(function (link) {
             link.source = nodes[link.source] || (nodes[link.source] = { name: link.source, image: link.image, type: link.type, x: link.x, y: link.y });
@@ -16,12 +48,13 @@ function newFunction() {
             .nodes(d3.values(nodes))
             .links(links)
             .size([width, height])
-            .linkDistance(width / 2)
+            .linkDistance(param)
             // .linkStrength(0.1)
             .charge(-100)
             // .gravity(0.02)
             .on("tick", tick)
             .start();
+
         console.log(d3.values(nodes));
         var svg = d3.select("#area2").append("svg")
             .attr("width", width)

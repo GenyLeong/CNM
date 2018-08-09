@@ -4,10 +4,10 @@ function newFunction() {
         var height_size = window.innerHeight;
         var width_size = window.innerWidth, margin = { top: 20, right: 20, bottom: 50, left: 20 }, width = width_size - margin.right - margin.left, height = height_size - margin.top - margin.bottom;
 
-        var change_distance = d3.select('#area1')
-                                .append('input')
-                                .classed('change_distance', true)
-                                .attr('type', 'number')
+        // var change_distance = d3.select('#area1')
+        //                         .append('input')
+        //                         .classed('change_distance', true)
+        //                         .attr('type', 'number')
 
         
     // $(".change_distance").keypress(function(e){

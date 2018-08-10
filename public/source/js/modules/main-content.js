@@ -1,42 +1,69 @@
 var MainContent = newFunction();
-function newFunction() {
+
+function newFunction() {    
+
     return (function () {
+
         var height_size = window.innerHeight;
-        var width_size = window.innerWidth, margin = { top: 20, right: 20, bottom: 50, left: 20 }, width = width_size - margin.right - margin.left, height = height_size - margin.top - margin.bottom;
+        var width_size = window.innerWidth, margin = { top: 20, right: 20, bottom: 50, left: 20 }, width = width_size - margin.right - margin.left, height = height_size - margin.top - margin.bottom;  
 
-        // var change_distance = d3.select('#area1')
-        //                         .append('input')
-        //                         .classed('change_distance', true)
-        //                         .attr('type', 'number')
+    
+        var change_distance = d3.select('#linkDistance')
+                                .append('input')
+                                .classed('change_distance', true)
+                                .attr('type', 'number')
 
+        var change_gravity = d3.select("#gravity")
+                                .append('input')
+                                .attr("type", "range")
+                                .classed("change_gravity", true)
+                                .attr("value","0.2")
+                                .attr("min", "0")
+                                .attr("max", "1")
+                                .attr("step", ".01")
         
-    // $(".change_distance").keypress(function(e){
-    //     if (e.which == 13) {
+        var change_charge = d3.select("#charge")
+                                .append('input')
+                                .attr("type", "range")
+                                .classed("change_charge", true)
+                                .attr("value","100")
+                                .attr("min", "0")
+                                .attr("max", "450")
+                                .attr("step", "30")
 
-    //         var value = $(".change_distance").val()
-    //         function linkDistance(){
-    //                 localStorage.setItem('change_distance', value)
-    //                 location.reload()
-    //                 return localStorage.getItem('change_distance')
-    //                 console.log(value)
-    //                     // return $(".change_distance").val()
-    //             }
-    //     }
-        
-    //     else{                
-    //         function linkDistance(){
-    //             return width/2
-    //         }
-    //     }
-    // }) 
-
-    // $(".change_distance").val() == document.URL.split('#')[1]
-
-        var param = document.URL.split('#')[1] || width/2;
+        var param =  width/2;
         var links = json.start();
         var jsond3 = json.start();        
-        var nodes = {};
+        var nodes = {};    
 
+        $(".change_distance").keypress(function(e){
+
+            if (e.which == 13 && $(".change_distance").val()!== "") {
+                var param = $(".change_distance").val()
+            }
+            
+            else{  
+                var param =  width/2            
+            }
+
+            force
+            .linkDistance(param)
+            .start()
+        })  
+        
+        $(".change_gravity").on("change input", function(e){           
+            var val = $(".change_gravity").val();
+            d3.select("#gravityLabel").text(val)
+                force.gravity(val);
+                force.start()            
+        })  
+
+        $(".change_charge").on("change input", function(e){           
+            var val = $(".change_charge").val();
+            d3.select("#chargeLabel").text(val)
+                force.charge("-"+val);
+                force.start()            
+        }) 
 
         // Compute the distinct nodes from the links.
         links.forEach(function (link) {
@@ -51,7 +78,7 @@ function newFunction() {
             .linkDistance(param)
             // .linkStrength(0.1)
             .charge(-100)
-            // .gravity(0.02)
+            .gravity(0.1)
             .on("tick", tick)
             .start();
 
@@ -186,7 +213,9 @@ function newFunction() {
                     return "translate(" + d.x + "," + d.y + ")";
                 })
                 .call(force.drag);
-        }
+        } 
+        
+
         var dispatch = d3.dispatch('unhighlightAll', 'toggleSingle')
             // remove the `highlighted` class on all circles
             .on('unhighlightAll', function (d) {
@@ -204,11 +233,6 @@ function newFunction() {
             .on('toggleSingle', function (el, d) {
                 //   return function(d) {        
                 console.log("toggleSingle");
-                // var highlighted = d3.select(el).classed('highlighted');
-                // unhighlight all
-                
-                // set opposite of stored state
-                // d3.select(el).classed('highlighted', !highlighted);
                 var opacity = 0.6;
                 node
                     .style("opacity", function (o) {
@@ -235,6 +259,7 @@ function newFunction() {
                     // dispatch.unhighlightAll();
                 // };
             });
+
         svg.on('click', function () {
             // do nothing if a clickable circle is clicked
             if (d3.select(d3.event.target).classed('image')) {
@@ -246,6 +271,7 @@ function newFunction() {
                 dispatch.unhighlightAll();
             }
         });
+        
     })();
 }
 

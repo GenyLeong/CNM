@@ -31,7 +31,7 @@ function newFunction() {
                                 .attr("max", "450")
                                 .attr("step", "30")
 
-        var param =  width/2;
+        var param =  width/2.5;
         var links = json.start();
         var jsond3 = json.start();        
         var nodes = {};    
@@ -43,7 +43,7 @@ function newFunction() {
             }
             
             else{  
-                var param =  width/2            
+                var param =  width/2.5            
             }
 
             force
@@ -78,7 +78,7 @@ function newFunction() {
             .linkDistance(param)
             // .linkStrength(0.1)
             .charge(-100)
-            .gravity(0.1)
+            .gravity(0.2)
             .on("tick", tick)
             .start();
 

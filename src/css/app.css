@@ -811,7 +811,7 @@ a[href^="tel"] {
  * MainContent
 ----------------------------------------------------------------------------*/
 .MainContent {
-  margin: auto; }
+  margin: 20px; }
   .MainContent.is-visible {
     display: block; }
   .MainContent-content {
@@ -838,8 +838,23 @@ a[href^="tel"] {
     overflow: unset;
     -ms-touch-action: none;
         touch-action: none; }
-  .MainContent #area2 small {
-    font-size: 13px; }
+  .MainContent small {
+    font-size: 13px;
+    display: block;
+    margin: 7px 0px; }
+  .MainContent .change_distance {
+    border: none;
+    border-bottom: 1px solid #000;
+    transition: width .35s ease-in-out;
+    width: 50px; }
+    .MainContent .change_distance:focus {
+      border: 1px solid #000;
+      width: 100px; }
+  .MainContent .change_gravity, .MainContent .change_charge {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    margin-left: 7px; }
 
 .image {
   cursor: pointer; }

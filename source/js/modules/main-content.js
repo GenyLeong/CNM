@@ -42,7 +42,7 @@ function newFunction() {
                 var param = $(".change_distance").val()
             }
             
-            else{  
+            else {  
                 var param =  width/2.5            
             }
 
@@ -104,8 +104,7 @@ function newFunction() {
                         posX += 10;
                     }
                     tip.attr('style', `visibility: visible; left: ${posX}px; top: ${posY}px`);
-                }
-                ;
+                };
             }
             force.stop();
         };
@@ -219,7 +218,7 @@ function newFunction() {
         var dispatch = d3.dispatch('unhighlightAll', 'toggleSingle')
             // remove the `highlighted` class on all circles
             .on('unhighlightAll', function (d) {
-                console.log(d)
+                // console.log(d)
                 d3.selectAll('.link')
                     .classed('link-click', false)
                     .style("stroke-opacity", 1);
@@ -232,7 +231,7 @@ function newFunction() {
             // toggle the `highlighted` class on element `el`
             .on('toggleSingle', function (el, d) {
                 //   return function(d) {        
-                console.log("toggleSingle");
+                // console.log("toggleSingle");
                 var opacity = 0.6;
                 node
                     .style("opacity", function (o) {

@@ -19,6 +19,11 @@ var json = (function () {
         type: "Fue denunciado en el 2000 por la masiva falsificación de firmas para la inscripción del partido fujimorista Perú 2000, mientras ocupó el cargo de gerente electoral de la ONPE. Ahora Cavassa trabaja como asesor informático en la universidad Telesup, de propiedad del excongresista y presidente del partido Podemos por el Progreso del Perú (PP), José Luna Gálvez.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ"  
       },
+      { source: "José Luis Cavassa Roncalla", 
+        target: "Julio Gutiérrez", 
+        type: "Consejero del CNM. Walter Ríos le pide, por intermedio de Cavassa, abogar por la candidatura del antropólogo Orlando Velásquez. Además este le pide a Hinostroza que interceda con Juan Sotomayor, alcalde del Callao y candidato a gobernador regional del Callao, para que ponga en su lista a su sobrino, Carlos Valdivia, como candidato a la alcaldía de Bellavista de su partido Vamos Perú",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
+      },
       { 
         source: "Aldo Mayorga", 
         target: "Walter Ríos", 
@@ -52,12 +57,7 @@ var json = (function () {
         target: "Victor Raúl Rodriguez Monteza", 
         type: "Se ha retirado del caso. Fiscal supremo a cargo de la investigación de Walter Ríos, que exigió a los periodistas de IDL-Reporteros y Panorama que delataran a sus fuentes. Cercano a Mario Mendoza.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
-      },
-      { source: "César Hinostroza", 
-        target: "Ricardo Chang", 
-        type: "Declaró fundada, en 2014, la acción de amparo presentada por la Universidad Inca Garcilaso de la Vega, contra la comisión de Educación del Congreso, que investigó las irregularidades en su gestión. Chang fue cuestionado porque se graduó como magíster de Derecho Civil y Comercial en esa universidad poco tiempo antes.El cinco de junio, el pleno del CNM se reunió  y ratificó al juez Ricardo Chang. ",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
-      },
+      },      
       { source: "Mario Mendoza", 
         target: "Salvador Castañeda Córdova", 
         type: "Amigo de Mario Mendoza y gerente de administración de la municipalidad del Callao durante la gestión de Félix Moreno, fue condenado por haberse apropiado de fondos provenientes de las multas por infracciones de tránsito en el Callao. Actualmente está profugo y su caso está en la Sala Suprema Penal Permanente. Conversa directamente con Walter Ríos quien le promete que hablará con la doctora encargada de su caso. ",
@@ -72,25 +72,25 @@ var json = (function () {
         target: "José Luis Diaz Asto", 
         type: "Presidente del Poder Judicial, se contacta con Walter Ríos a través de su asesor para invitarlo a un almuerzo.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
-      },      
-      { source: "José Luis Cavassa Roncalla", 
-        target: "Julio Gutiérrez", 
-        type: "Consejero del CNM. Walter Ríos le pide, por intermedio de Cavassa, abogar por la candidatura del antropólogo Orlando Velásquez. Además este le pide a Hinostroza que interceda con Juan Sotomayor, alcalde del Callao y candidato a gobernador regional del Callao, para que ponga en su lista a su sobrino, Carlos Valdivia, como candidato a la alcaldía de Bellavista de su partido Vamos Perú",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
-      },
+      },    
       { source: "Héctor Becerril", 
         target: "Baltazar Morales", 
         type: "Congresista fujimorista",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
       },
-      { source: "Héctor Becerril", 
-        target: "Baltazar Morales", 
+      { source: "Baltazar Morales", 
+        target: "Héctor Becerril", 
         type: "Héctor Becerril persuade al consejero Baltazar Morales de votar por el candidato que Guido Aguila respaldaba para la presidencia del CNM: el consejero Julio Gutiérrez.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
       },
       { source: "César Hinostroza", 
         target: "Mario Mendoza", 
-        type: "Magistrado y presidente de la Segunda Sala Penal Transitoria de la Corte Suprema. Gestionó con los consejeros Iván Noguera y Julio Gutierrez un apoyo en el proceso de ratificación del juez Chang. César Hinostroza invitó a Ana Calderón y a su esposo Guido Aguila a escribir en la revista institucional de la Corte Superior de Justicia del Callao. Aprobó como jurado la tesis de Calderón y la invitó a conferencias como ponente.",
+        type: "Magistrado y presidente de la Segunda Sala Penal Transitoria de la Corte Suprema. Gestionó con los consejeros Iván Noguera y Julio Gutiérrez un apoyo en el proceso de ratificación del juez Chang. César Hinostroza invitó a Ana Calderón y a su esposo Guido Aguila a escribir en la revista institucional de la Corte Superior de Justicia del Callao. Aprobó como jurado la tesis de Calderón y la invitó a conferencias como ponente.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
+      },
+      { source: "César Hinostroza", 
+        target: "Ricardo Chang", 
+        type: "Declaró fundada, en 2014, la acción de amparo presentada por la Universidad Inca Garcilaso de la Vega, contra la comisión de Educación del Congreso, que investigó las irregularidades en su gestión. Chang fue cuestionado porque se graduó como magíster de Derecho Civil y Comercial en esa universidad poco tiempo antes.El cinco de junio, el pleno del CNM se reunió  y ratificó al juez Ricardo Chang. ",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
       },
       { source: "César Hinostroza", 

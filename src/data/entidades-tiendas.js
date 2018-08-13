@@ -135,7 +135,7 @@ var json = (function () {
       },
       { source: "César Hinostroza", 
         target: "César Serrano", 
-        type: "Esposo de la fiscal Norah Córdova, quién envió sin ningún documento ni orden a un fiscal y policías a una incursión fallida en IDL tras la serie de reportajes revelados sobre corrupción judicial",
+        type: "Esposo de la fiscal Norah Córdova, quién envió sin ningún documento ni orden a un fiscal y policías a una incursión fallida en IDL tras la serie de reportajes revelados sobre corrupción judicial. Aparece en un audio con César Hinostroza.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
       },       
       { source: "Maritza Aragón Hermoza", 

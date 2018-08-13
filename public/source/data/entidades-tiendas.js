@@ -53,8 +53,8 @@ var json = (function () {
         type: "Se ha retirado del caso. Fiscal supremo a cargo de la investigación de Walter Ríos, que exigió a los periodistas de IDL-Reporteros y Panorama que delataran a sus fuentes. Cercano a Mario Mendoza.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
       },
-      { source: "Mario Mendoza", 
-        target: "Ricardo  Chang", 
+      { source: "César Hinostroza", 
+        target: "Ricardo Chang", 
         type: "Declaró fundada, en 2014, la acción de amparo presentada por la Universidad Inca Garcilaso de la Vega, contra la comisión de Educación del Congreso, que investigó las irregularidades en su gestión. Chang fue cuestionado porque se graduó como magíster de Derecho Civil y Comercial en esa universidad poco tiempo antes.El cinco de junio, el pleno del CNM se reunió  y ratificó al juez Ricardo Chang. ",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
       },
@@ -75,7 +75,7 @@ var json = (function () {
       },      
       { source: "José Luis Cavassa Roncalla", 
         target: "Julio Gutiérrez", 
-        type: "Consejero del CNM. Walter Ríos le pide, por intermedio de Cavassa, abogar por la candidatura del antropólogo Orlando Velásquez.",
+        type: "Consejero del CNM. Walter Ríos le pide, por intermedio de Cavassa, abogar por la candidatura del antropólogo Orlando Velásquez. Además este le pide a Hinostroza que interceda con Juan Sotomayor, alcalde del Callao y candidato a gobernador regional del Callao, para que ponga en su lista a su sobrino, Carlos Valdivia, como candidato a la alcaldía de Bellavista de su partido Vamos Perú",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
       },
       { source: "Héctor Becerril", 
@@ -93,6 +93,16 @@ var json = (function () {
         type: "Magistrado y presidente de la Segunda Sala Penal Transitoria de la Corte Suprema. Gestionó con los consejeros Iván Noguera y Julio Gutierrez un apoyo en el proceso de ratificación del juez Chang. César Hinostroza invitó a Ana Calderón y a su esposo Guido Aguila a escribir en la revista institucional de la Corte Superior de Justicia del Callao. Aprobó como jurado la tesis de Calderón y la invitó a conferencias como ponente.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
       },
+      { source: "César Hinostroza", 
+        target: "Enrique Rodríguez Garayar", 
+        type: "Fue el nexo entre el periodista Aldo Mariategui y César Hinostroza",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
+      },
+      { source: "César Hinostroza", 
+        target: "Aldo Mariategui", 
+        type: "Periodista. César Hinostroza se reune con él porque tenía interés en postular a la Presidencia del Poder Judicial y quería que lo asesorara.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
+      },      
       { source: "José Luis Cavassa Roncalla", 
         target: "Guido Aguila", 
         type: "RENUNCIÓ. Fue presidente y ahora consejero del CNM. Walter Ríos le pide, por intermedio de Cavassa, abogar por la candidatura del antropólogo Orlando Velásquez para la presidencia del CNM.",
@@ -105,7 +115,7 @@ var json = (function () {
       },
       { source: "César Hinostroza", 
         target: "No identificado (caso señora K)", 
-        type: "Un personaje no identificado llama a César Hinostroza para que se reuna con la Fuerza n1.",
+        type: "Antonio Camayo llama a César Hinostroza para que se reuna con la Fuerza n1 en su casa.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ"
       },
       { source: "César Hinostroza", 
@@ -122,7 +132,12 @@ var json = (function () {
         target: "No identificado (caso violación)", 
         type: "El juez César Hinostroza conversa sobre alternativas de reducción de condena o incluso absolución al presunto abusador sexual de una niña de entre diez y once años.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
-      },      
+      },
+      { source: "César Hinostroza", 
+        target: "César Serrano", 
+        type: "Esposo de la fiscal Norah Córdova, quién envió sin ningún documento ni orden a un fiscal y policías a una incursión fallida en IDL tras la serie de reportajes revelados sobre corrupción judicial",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ" 
+      },       
       { source: "Maritza Aragón Hermoza", 
         target: "Guido Aguila", 
         type: "Consejera del CNM, involucrada en la realización del balotario de los examenes de ascenso.",
@@ -150,9 +165,14 @@ var json = (function () {
       },      
       { source: "César Hinostroza", 
         target: "Antonio Camayo Valverde (IZA Motors)", 
-        type: "Gerente general de IZA Motors Perú, organizó una reunión en homenaje al nuevo puesto de presidente de Orlando Velásquez  en La Planicie. César Hinostroza lo llamó por teléfono para coordinar el viaje que quería hacer con su esposa a Rusia para ver jugar a la selección peruana. El gerente de Iza Motors le prometió que en una semana tendría los tickets. ",
+        type: "Gerente general de IZA Motors Perú, organizó una reunión en homenaje al nuevo puesto de presidente de Orlando Velásquez en La Planicie. César Hinostroza lo llamó por teléfono para coordinar el viaje que quería hacer con su esposa a Rusia para ver jugar a la selección peruana. El gerente de Iza Motors le prometió que en una semana tendría los tickets. Además Hinostroza le pidió que interceda con el congresista fujimorista Miguel Torres, para que su hija sea aceptada como practicante en su estudio.",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ"        
-      },      
+      },
+      { source: "Antonio Camayo Valverde (IZA Motors)", 
+        target: "Miguel Torres", 
+        type: "Congresista fujimorista. Hinostroza le pidió a Antonio Camayo que interceda con el congresista para que su hija sea aceptada como practicante en su estudio.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVDtn0hOx4nMLxmgQAU9ExOKydjxfH0XxcpyBY1hGWcC33ho-gQ"        
+      },       
       { source: "Antonio Camayo Valverde (IZA Motors)", 
         target: "Enrique Vidal", 
         type: "Periodista montesinista, asesor audiovisual de Iza Motors, también asistió al almuerzo en homenaje al futbolista Héctor Chumpitaz. El asesor de comunicaciones de Duberlí Rodríguez, José Luis Diaz Asto lo menciona en una llamada como intermediario hacia el ex ministro de justicia. Trabajó para el ex presidente de la Región Callao, Alex Kouri Bumachar organizándole presentaciones de cargo. ",
@@ -203,12 +223,27 @@ var json = (function () {
       },
       { source: "Walter Ríos", 
         target: "Orlando Velásquez"       
+      }, 
+      { source: "Walter Ríos", 
+        target: "Ricardo Chang"       
+      },
+      { source: "Mario Mendoza", 
+        target: "Ricardo Chang"       
       },      
       { source: "Héctor Becerril", 
         target: "Guido Aguila"       
       },
       { source: "Antonio Camayo Valverde (IZA Motors)", 
         target: "Jacques Rodrich (Farenet)"
+      },
+      { source: "Enrique Rodríguez Garayar", 
+        target: "Aldo Mariategui"
+      },
+      { source: "César Hinostroza", 
+        target: "Julio Gutiérrez"
+      },
+      { source: "Antonio Camayo Valverde (IZA Motors)", 
+        target: "No identificado (caso señora K)"
       }
     ];
     return links;

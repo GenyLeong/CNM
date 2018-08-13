@@ -837,7 +837,9 @@ a[href^="tel"] {
   .MainContent #area2 svg {
     overflow: unset;
     -ms-touch-action: none;
-        touch-action: none; }
+        touch-action: none;
+    margin: auto;
+    width: 100%; }
   .MainContent small {
     font-size: 13px;
     display: block;

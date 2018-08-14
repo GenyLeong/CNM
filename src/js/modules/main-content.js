@@ -78,7 +78,7 @@ function newFunction() {
             .linkDistance(param)
             // .linkStrength(0.1)
             .charge(-300)
-            .gravity(0.15)
+            .gravity(0.2)
             .on("tick", tick)
             .start();
 

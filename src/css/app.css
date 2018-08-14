@@ -839,7 +839,8 @@ a[href^="tel"] {
     -ms-touch-action: none;
         touch-action: none;
     margin: auto;
-    width: 100%; }
+    width: 100%;
+    z-index: 1; }
   .MainContent small {
     font-size: 13px;
     display: block;

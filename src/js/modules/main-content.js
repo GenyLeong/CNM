@@ -26,12 +26,12 @@ function newFunction() {
                                 .append('input')
                                 .attr("type", "range")
                                 .classed("change_charge", true)
-                                .attr("value","100")
+                                .attr("value","500")
                                 .attr("min", "0")
-                                .attr("max", "450")
-                                .attr("step", "30")
+                                .attr("max", "1000")
+                                .attr("step", "100")
 
-        var param =  width/2.5;
+        var param =  width/4;
         var links = json.start();
         var jsond3 = json.start();        
         var nodes = {};    
@@ -43,7 +43,7 @@ function newFunction() {
             }
             
             else {  
-                var param =  width/2.5            
+                var param =  width/4           
             }
 
             force
@@ -77,8 +77,8 @@ function newFunction() {
             .size([width, height])
             .linkDistance(param)
             // .linkStrength(0.1)
-            .charge(-150)
-            // .gravity(0.1)
+            .charge(-300)
+            .gravity(0.15)
             .on("tick", tick)
             .start();
 
@@ -164,8 +164,8 @@ function newFunction() {
             //         }
             //   })
             .attr("xlink:href", function (d) { return d.image; })
-            .attr("x", -10)
-            .attr("y", -10)
+            .attr("x", -5)
+            .attr("y", -8)
             .attr("class", "image")
             .attr("width", 16)
             .attr("height", 16)
@@ -177,8 +177,9 @@ function newFunction() {
         //   .on("click", click(0.6))
         // add the text 
         node.append("text")
-            .attr("x", 12)
-            .attr("dy", ".35em")
+            .attr("x", 10)
+            .attr("y", function(d, i) { if (i>0) { return 10 }    else { return 8 } })
+            // .attr("dy", ".35em")
             .text(function (d) {
                 return d.name;
             });

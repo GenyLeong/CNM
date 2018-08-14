@@ -20,26 +20,8 @@ var copyfile = function(){
       'fonts/**/*',
       'data/*',
       // Images
-      'img/ciudades/*',
-      'img/generos/*',
-      'img/sprite_flags.png',
-      'img/sprite-icons.png',
-      'img/logo-aeromexico.png',
-      'img/logo-safetypay-small.png',
-      'img/codigo-barras.png',
-      'img/blank.gif',
-      'img/iconos_more.png',
-      'img/reloj.gif',
-      'img/header-logo.png',
-      'img/search-icon.png',
-      'img/bullet-1.png',
-      'img/bullet-2.png',
-      'img/bullet-3.png',
-      'img/bullet-4.png',
-      'img/directorio.jpg',
-      'img/logo-ra.png',
-      'img/fondo.png',
-      // 'img/search-icon.png',
+      'img/businessman.svg',
+
 
       // JS vendor files
       'js/vendor/*.js',

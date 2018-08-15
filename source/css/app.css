@@ -867,7 +867,8 @@ a[href^="tel"] {
 
 .tip {
   position: absolute;
-  background: #000000d9;
+  background: #000;
+  opacity: 0.8;
   color: white;
   padding: 6px 10px;
   border-radius: 5px;

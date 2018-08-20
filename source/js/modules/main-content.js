@@ -150,30 +150,34 @@ function newFunction() {
             .attr("class", "node")
             .call(force.drag);
 
-        node.append("image")
-            //   .attr("xlink:href", function(d){              
-            //       console.log(d)
-            //         for (var i = 0; i < jsond3.length; i++) {
-            //           if(d.index == i){
-            //               // console.log(jsond3[i])
-            //               return jsond3[i].image
-            //           }
-            //           else if(d.index == 0){
-            //               return jsond3[0].image
-            //           }    
-            //         }
-            //   })
-            .attr("xlink:href", function (d) { return d.image; })
-            .attr("x", -5)
-            .attr("y", -8)
-            .attr("class", "image")
-            .attr("width", 16)
-            .attr("height", 16)
-            // .on("mouseover", tip.show)
-            // .on("mouseout", tip.hide)
-            .on('click', function (d) {
-                dispatch.toggleSingle(this, d);
-            });
+            if(width_size <= 600){
+                node.append("image")
+                    .attr("xlink:href", function (d) { return d.image; })
+                    .attr("x", -5)
+                    .attr("y", -8)
+                    .attr("class", "image")
+                    .attr("width", 16)
+                    .attr("height", 16)
+                    // .on("mouseover", tip.show)
+                    // .on("mouseout", tip.hide)
+                    .on('click', function (d) {
+                        dispatch.toggleSingle(this, d);
+                    });
+            }
+            else{
+                node.append("image")
+                .attr("xlink:href", function (d) { return d.image; })
+                .attr("x", -5)
+                .attr("y", -8)
+                .attr("class", "image")
+                .attr("width", 16)
+                .attr("height", 16)
+                .on("mouseover", tip.show)
+                .on("mouseout", tip.hide)
+                .on('click', function (d) {
+                    dispatch.toggleSingle(this, d);
+                }); 
+            }
         //   .on("click", click(0.6))
         // add the text 
         node.append("text")

@@ -169,8 +169,8 @@ function newFunction() {
             .attr("class", "image")
             .attr("width", 16)
             .attr("height", 16)
-            .on("mouseover", tip.show)
-            .on("mouseout", tip.hide)
+            // .on("mouseover", tip.show)
+            // .on("mouseout", tip.hide)
             .on('click', function (d) {
                 dispatch.toggleSingle(this, d);
             });
@@ -227,7 +227,12 @@ function newFunction() {
                 node
                 .style("opacity", 1)
                 .classed("text-click", false)
-                .style('fill-opacity', 1);
+                .style('fill-opacity', 1)
+                // .on('click', tip.hide)
+
+                tip.style("visibility", "hidden");
+                force.start();
+                
             })
             // toggle the `highlighted` class on element `el`
             .on('toggleSingle', function (el, d) {
@@ -243,7 +248,9 @@ function newFunction() {
                     .classed("text-click", function (o) {
                         return isConnected(d, o) ? true : false;
                         // return o.source === d || o.target === d ? true : false;
-                    });
+                    })
+                    .on('click', tip.show)
+                    
 
                 d3.selectAll(".link")
                     .style("stroke-opacity", function (o) {
@@ -264,6 +271,7 @@ function newFunction() {
             // do nothing if a clickable circle is clicked
             if (d3.select(d3.event.target).classed('image')) {
                 console.log("entró");
+                 
                 return;
             }
             else {

@@ -7,6 +7,13 @@ function newFunction() {
         var height_size = window.innerHeight;
         var width_size = window.innerWidth, margin = { top: 20, right: 10, bottom: 50, left: 10 }, width = width_size - margin.right - margin.left, height = height_size - margin.top - margin.bottom;  
 
+        var posX = d3.scale.linear()
+                    .range([0,width])
+                    .domain([0,120]);
+
+        var posY = d3.scale.linear()
+                    .range([0,height])
+                    .domain([0,125]);
     
         var change_distance = d3.select('#linkDistance')
                                 .append('input')
@@ -81,6 +88,26 @@ function newFunction() {
             .gravity(0.2)
             .on("tick", tick)
             .start();
+        
+        var drag = force.drag()
+                    .on("dragstart", dragstart);
+
+        force.on("start", function() {                
+            node
+            .data(force.nodes())
+            .attr("cx", function(d) {
+                //To show this event is not triggered
+                    d3.select("body")
+                                .append("text")
+                        .text(d.x);
+                
+                        
+                    return posX(d.x);
+                })
+                .attr("cy", function(d) {
+                    return posY(d.y);
+                })
+        });
 
         console.log(d3.values(nodes));
         var svg = d3.select("#area2").append("svg")
@@ -112,19 +139,7 @@ function newFunction() {
             tip.style("visibility", "hidden");
             force.start();
         };
-        // build the arrow.
-        // svg.append("svg:defs").selectAll("marker")
-        //     .data(["end"])      // Different link/path types can be defined here
-        //   .enter().append("svg:marker")    // This section adds in the arrows
-        //     .attr("id", String)
-        //     .attr("viewBox", "0 -5 10 10")
-        //     .attr("refX", 15)
-        //     .attr("refY", -1.5)
-        //     .attr("markerWidth", 6)
-        //     .attr("markerHeight", 6)
-        //     .attr("orient", "auto")
-        //     .append("svg:path")
-        //     .attr("d", "M0,-5L10,0L0,5")
+
         var linkedByIndex = {};
         links.forEach(function (d) {
             linkedByIndex[d.source.index + "," + d.target.index] = 1;
@@ -148,7 +163,8 @@ function newFunction() {
             .enter()
             .append("g")
             .attr("class", "node")
-            .call(force.drag);
+            .on("dblclick", dblclick)
+            .call(drag);
 
             if(width_size <= 600){
                 node.append("image")
@@ -219,6 +235,13 @@ function newFunction() {
                 .call(force.drag);
         } 
         
+        function dblclick(d) {
+            d3.select(this).classed("fixed", d.fixed = false);
+        }
+
+        function dragstart(d) {
+            d3.select(this).classed("fixed", d.fixed = true);
+        }
 
         var dispatch = d3.dispatch('unhighlightAll', 'toggleSingle')
             // remove the `highlighted` class on all circles

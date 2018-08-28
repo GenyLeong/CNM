@@ -22,6 +22,8 @@ var copyfile = function(){
       // Images
       'img/woman.svg',
       'img/man.svg',
+      'img/man-click.svg',
+      'img/woman-click.svg',
 
 
       // JS vendor files

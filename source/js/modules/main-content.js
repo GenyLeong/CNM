@@ -74,8 +74,8 @@ function newFunction() {
 
         // Compute the distinct nodes from the links.
         links.forEach(function (link) {
-            link.source = nodes[link.source] || (nodes[link.source] = { name: link.source, image: link.image, type: link.type, x: link.x, y: link.y });
-            link.target = nodes[link.target] || (nodes[link.target] = { name: link.target, image: link.image, type: link.type, x: link.x, y: link.y });
+            link.source = nodes[link.source] || (nodes[link.source] = { name: link.source, image: link.image, image_click: link.image_click, type: link.type, x: link.x, y: link.y });
+            link.target = nodes[link.target] || (nodes[link.target] = { name: link.target, image: link.image, image_click: link.image_click, type: link.type, x: link.x, y: link.y });
         });
         console.log(links);
         var force = d3.layout.force()
@@ -169,8 +169,8 @@ function newFunction() {
             if(width_size <= 767){
                 node.append("image")
                     .attr("xlink:href", function (d) { return d.image; })
-                    .attr("x", -5)
-                    .attr("y", -8)
+                    .attr("x", -7)
+                    .attr("y", -10)
                     .attr("class", "image")
                     .attr("width", 16)
                     .attr("height", 16)
@@ -186,8 +186,8 @@ function newFunction() {
                 .attr("x",-7)
                 .attr("y", -10)
                 .attr("class", "image")
-                .attr("width", 16)
-                .attr("height", 16)
+                .attr("width", 18)
+                .attr("height", 18)
                 .on("mouseover", tip.show)
                 .on("mouseout", tip.hide)
                 .on('click', function (d) {
@@ -251,6 +251,11 @@ function newFunction() {
                     .classed('link-click', false)
                     .style("stroke-opacity", 1);
 
+                d3.selectAll('.image')
+                    .attr("xlink:href", function (d) { 
+                        return d.image; 
+                    })
+
                 node
                 .style("opacity", 1)
                 .classed("text-click", false)
@@ -259,7 +264,7 @@ function newFunction() {
 
                 tip.style("visibility", "hidden");
                 force.start();
-                
+
             })
             // toggle the `highlighted` class on element `el`
             .on('toggleSingle', function (el, d) {
@@ -289,7 +294,12 @@ function newFunction() {
                     .classed("link-click", function (o) {
                         return o.source === d || o.target === d ? true : false;
                     });
-
+                
+                    d3.selectAll('.image')
+                    .attr("xlink:href", function (o) { 
+                        return isConnected(d, o) ? o.image_click : d.image; 
+                    })
+                
                     // dispatch.unhighlightAll();
                 // };
             });

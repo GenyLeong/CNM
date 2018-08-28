@@ -8,7 +8,7 @@
   margin: 20px;
 
   // background: #fff;
-  @include breakpoint(phablet) {
+  @include breakpoint(tablet) {
     // padding-left: 38px;    
   }
   &.is-visible {
@@ -72,6 +72,10 @@ small{
   font-size: 13px;
   display:block;
   margin:7px 0px;
+  @include breakpoint(tablet) {
+    margin:7px;
+    display:inline-block;
+  }
 }
 
   .change_distance{

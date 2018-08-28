@@ -52,7 +52,14 @@
 ----------------------------------------------------------------------------*/
 body {
   font-family: "OpenSans", Arial;
-  font-size: 16px; }
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #130C0E;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 960px; }
 
 a[href^="tel"] {
   color: inherit;
@@ -131,16 +138,20 @@ a[href^="tel"] {
     display: block; }
   .MainContent-content {
     margin: auto; }
+  .MainContent #area0 {
+    color: #fdbb30; }
+  .MainContent #area1 {
+    font-size: 13px; }
   .MainContent .link {
     fill: none;
     stroke: #ff7070;
     stroke-width: 1px; }
   .MainContent .link-click {
-    stroke: #094179;
-    stroke-width: 1px; }
+    stroke: #ee3124;
+    stroke-width: 2px; }
   .MainContent .text-click text {
-    font: bold 13px sans-serif;
-    fill: #000; }
+    font: 13px sans-serif;
+    fill: #fdbb30; }
   .MainContent circle {
     fill: #ccc;
     stroke: #fff;
@@ -199,13 +210,14 @@ a[href^="tel"] {
   .tip p {
     margin: 0;
     font-size: 13px; }
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     .tip {
       width: auto;
-      max-width: 300px; } }
+      max-width: 360px; } }
 
 .resources span {
-  font-weight: 600; }
+  font-weight: 600;
+  color: #fff; }
 
 .resources a {
   color: #6b6b6b;

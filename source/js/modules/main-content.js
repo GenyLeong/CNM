@@ -9,11 +9,11 @@ function newFunction() {
 
         var posX = d3.scale.linear()
                     .range([0,width])
-                    .domain([0,120]);
+                    .domain([0,width]);
 
         var posY = d3.scale.linear()
                     .range([0,height])
-                    .domain([0,125]);
+                    .domain([0,100]);
     
         var change_distance = d3.select('#linkDistance')
                                 .append('input')
@@ -81,7 +81,7 @@ function newFunction() {
         var force = d3.layout.force()
             .nodes(d3.values(nodes))
             .links(links)
-            .size([width, height])
+            .size([width/2, height])
             .linkDistance(param)
             // .linkStrength(0.1)
             .charge(-300)
@@ -166,7 +166,7 @@ function newFunction() {
             .on("dblclick", dblclick)
             .call(drag);
 
-            if(width_size <= 600){
+            if(width_size <= 767){
                 node.append("image")
                     .attr("xlink:href", function (d) { return d.image; })
                     .attr("x", -5)
@@ -183,8 +183,8 @@ function newFunction() {
             else{
                 node.append("image")
                 .attr("xlink:href", function (d) { return d.image; })
-                .attr("x", -5)
-                .attr("y", -8)
+                .attr("x",-7)
+                .attr("y", -10)
                 .attr("class", "image")
                 .attr("width", 16)
                 .attr("height", 16)
@@ -198,7 +198,7 @@ function newFunction() {
         // add the text 
         node.append("text")
             .attr("x", 10)
-            .attr("y", function(d, i) { if (i>0) { return 10 }    else { return 8 } })
+            .attr("y", function(d, i) { if (i>0) { return 5 }    else { return 8 } })
             // .attr("dy", ".35em")
             .text(function (d) {
                 return d.name;
@@ -265,7 +265,7 @@ function newFunction() {
             .on('toggleSingle', function (el, d) {
                 //   return function(d) {        
                 // console.log("toggleSingle");
-                var opacity = 0.6;
+                var opacity = 0.5;
                 node
                     .style("opacity", function (o) {
                         thisOpacity = isConnected(d, o) ? 1 : opacity;

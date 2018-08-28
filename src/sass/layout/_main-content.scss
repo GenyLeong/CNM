@@ -20,7 +20,14 @@
     // max-width: 800px;
     margin: auto;
   }
+#area0{
+  color: rgb(253, 187, 48);
+}
 
+#area1{
+  font-size:13px;
+
+}
  .link {
   fill: none;
   stroke: #ff7070;
@@ -28,14 +35,14 @@
 }
 
 .link-click{
-  stroke: #094179;
-  stroke-width: 1px;
+  stroke: rgb(238, 49, 36);
+  stroke-width: 2px;
 }
 
 .text-click{
   text{
-    font: bold 13px sans-serif; 
-    fill: #000;
+    font: 13px sans-serif; 
+    fill: rgb(253, 187, 48);
   }
 }
 
@@ -114,15 +121,16 @@ small{
     margin:0;
     font-size:13px;
   }
-  @include breakpoint(phablet) {
+  @include breakpoint(tablet) {
     width:auto;
-    max-width:300px;
+    max-width:360px;
   }
 }
 
 .resources{
   span{
     font-weight: 600;    
+    color: #fff;
   }
   a{
     color: #6b6b6b;

@@ -8,11 +8,11 @@ function newFunction() {
         var width_size = window.innerWidth, margin = { top: 20, right: 10, bottom: 50, left: 10 }, width = width_size - margin.right - margin.left, height = height_size - margin.top - margin.bottom;  
 
         var posX = d3.scale.linear()
-                    .range([0,width])
+                    .range([0,width/2])
                     .domain([0,width]);
 
         var posY = d3.scale.linear()
-                    .range([0,height])
+                    .range([0,height/2])
                     .domain([0,100]);
     
         var change_distance = d3.select('#linkDistance')
@@ -125,10 +125,10 @@ function newFunction() {
                     // Tooltip to the left if it gets out of the window
                     var tipBox = tip.node().getBoundingClientRect();
                     if (posX + tipBox.width > window.innerWidth) {
-                        posX -= tipBox.width + 10;
+                        posX -= tipBox.width + 20;
                     }
                     else {
-                        posX += 10;
+                        posX += 20;
                     }
                     tip.attr('style', `visibility: visible; left: ${posX}px; top: ${posY}px`);
                 };

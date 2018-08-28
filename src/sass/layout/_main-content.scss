@@ -83,10 +83,10 @@ small{
     border-bottom: 1px solid #000;
     -webkit-transition: width .35s ease-in-out;
     transition: width .35s ease-in-out;
-    width:50px;    
+    width:10px;    
     &:focus{
       border: 1px solid #000;
-      width: 100px;
+      width: 50px;
     }
   }
 

@@ -97,9 +97,9 @@ function newFunction() {
             .data(force.nodes())
             .attr("cx", function(d) {
                 //To show this event is not triggered
-                    d3.select("body")
-                                .append("text")
-                        .text(d.x);
+                    // d3.select("body")
+                    //             .append("text")
+                    //     .text(d.x);
                 
                         
                     return posX(d.x);

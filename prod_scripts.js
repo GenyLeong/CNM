@@ -20,7 +20,8 @@ var copyfile = function(){
       'fonts/**/*',
       'data/*',
       // Images
-      'img/businessman.svg',
+      'img/woman.svg',
+      'img/man.svg',
 
 
       // JS vendor files

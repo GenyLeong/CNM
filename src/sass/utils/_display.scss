@@ -1,3 +1,17 @@
 .is-visible{
     display: block !important;
 }
+
+.show-mobile{
+    display:block;
+    @include breakpoint(tablet) {
+        display:none !important;
+    }
+}
+
+.hide-mobile{
+    display:none !important;
+    @include breakpoint(tablet) {
+        display:inline-block !important;
+    }
+}

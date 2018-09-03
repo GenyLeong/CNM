@@ -84,6 +84,18 @@ a[href^="tel"] {
 .is-visible {
   display: block !important; }
 
+.show-mobile {
+  display: block; }
+  @media (min-width: 768px) {
+    .show-mobile {
+      display: none !important; } }
+
+.hide-mobile {
+  display: none !important; }
+  @media (min-width: 768px) {
+    .hide-mobile {
+      display: inline-block !important; } }
+
 /*---------------------------------------------------------------------------*
  * Start: Button
 ----------------------------------------------------------------------------*/

@@ -176,6 +176,7 @@ function newFunction() {
                     .attr("height", 16)
                     // .on("mouseover", tip.show)
                     // .on("mouseout", tip.hide)
+                    .on("dblclick", tip.show)
                     .on('click', function (d) {
                         dispatch.toggleSingle(this, d);
                     });
@@ -281,7 +282,7 @@ function newFunction() {
                         return isConnected(d, o) ? true : false;
                         // return o.source === d || o.target === d ? true : false;
                     })
-                    .on('click', tip.show)
+                    // .on('click', tip.show)
                     
 
                 d3.selectAll(".link")
@@ -299,7 +300,9 @@ function newFunction() {
                     .attr("xlink:href", function (o) { 
                         return isConnected(d, o) ? o.image_click : d.image; 
                     })
-                
+                    
+                    tip.style("visibility", "hidden");
+                    
                     // dispatch.unhighlightAll();
                 // };
             });

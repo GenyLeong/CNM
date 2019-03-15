@@ -2,14 +2,14 @@
  * MainContent
 ----------------------------------------------------------------------------*/
 .MainContent {
-  // padding: 10px 15px 0 15px;  
+  // padding: 10px 15px 0 15px;
   // display: none;
   // max-width: 960px;
   margin: 20px;
 
   // background: #fff;
   @include breakpoint(tablet) {
-    // padding-left: 38px;    
+    // padding-left: 38px;
   }
   &.is-visible {
     display: block;
@@ -41,7 +41,7 @@
 
 .text-click{
   text{
-    font: 13px sans-serif; 
+    font: 13px sans-serif;
     fill: rgb(253, 187, 48);
   }
 }
@@ -53,7 +53,7 @@ circle {
 }
 
 text {
-  fill: #6b6b6b;
+  fill: #fff;
   font: 13px sans-serif;
   pointer-events: none;
 }
@@ -65,7 +65,7 @@ text {
     margin: auto;
     width: 100%;
     z-index:1;
-  }  
+  }
 }
 
 small{
@@ -83,10 +83,10 @@ small{
     border-bottom: 1px solid #000;
     -webkit-transition: width .35s ease-in-out;
     transition: width .35s ease-in-out;
-    width:10px;    
+    width:30px;
     &:focus{
       border: 1px solid #000;
-      width: 50px;
+      width: 60px;
     }
   }
 
@@ -133,7 +133,7 @@ small{
 
 .resources{
   span{
-    font-weight: 600;    
+    font-weight: 600;
     color: #fff;
   }
   a{
@@ -144,7 +144,7 @@ small{
       text-decoration:underline;
     }
   }
-} 
+}
 
 /*---------------------------------------------------------------------------*
 * Fin:MainContent

@@ -1,11 +1,11 @@
 var MainContent = newFunction();
 
-function newFunction() {    
-
+function newFunction() {
+    // name_selector()
     return (function () {
-
+      // $("#search").on("keyup", buscar);
         var height_size = window.innerHeight;
-        var width_size = window.innerWidth, margin = { top: 20, right: 10, bottom: 50, left: 10 }, width = width_size - margin.right - margin.left, height = height_size - margin.top - margin.bottom;  
+        var width_size = window.innerWidth, margin = { top: 20, right: 10, bottom: 50, left: 10 }, width = width_size - margin.right - margin.left, height = height_size - margin.top - margin.bottom;
 
         var posX = d3.scale.linear()
                     .range([0,width/2])
@@ -14,7 +14,7 @@ function newFunction() {
         var posY = d3.scale.linear()
                     .range([0,height/2])
                     .domain([0,100]);
-    
+
         var change_distance = d3.select('#linkDistance')
                                 .append('input')
                                 .classed('change_distance', true)
@@ -28,7 +28,7 @@ function newFunction() {
                                 .attr("min", "0")
                                 .attr("max", "1")
                                 .attr("step", ".01")
-        
+
         var change_charge = d3.select("#charge")
                                 .append('input')
                                 .attr("type", "range")
@@ -40,44 +40,143 @@ function newFunction() {
 
         var param =  width/4;
         var links = json.start();
-        var jsond3 = json.start();        
-        var nodes = {};    
+        var jsond3 = json.start();
+        var nodes = {};
+        name_selector()
+        function name_selector(){
+
+          var data = []
+          for (var i = 0; i < jsond3.length; i++) {
+            data.push(jsond3[i].id)
+            data = data.filter(function (el) {
+              return el != null;
+            });
+          }
+          console.log(data)
+          initSelect2(data)
+        }
 
         $(".change_distance").keypress(function(e){
 
             if (e.which == 13 && $(".change_distance").val()!== "") {
                 var param = $(".change_distance").val()
             }
-            
-            else {  
-                var param =  width/4           
+
+            else {
+                var param =  width/4
             }
 
             force
             .linkDistance(param)
             .start()
-        })  
-        
-        $(".change_gravity").on("change input", function(e){           
-            var val = $(".change_gravity").val();
-            d3.select("#gravityLabel").text(val)
-                force.gravity(val);
-                force.start()            
-        })  
+        })
 
-        $(".change_charge").on("change input", function(e){           
-            var val = $(".change_charge").val();
-            d3.select("#chargeLabel").text(val)
-                force.charge("-"+val);
-                force.start()            
-        }) 
+      // $("#search").keyup(function(e){
+      //   var tarjetas = $(".node");
+      //   var texto    = $("#search").val();
+      //   texto        = texto.toLowerCase();
+      //   // tarjetas.show();
+      //   for(var i=0; i<= tarjetas.length; i++){
+      //     var contenido = tarjetas[i].textContent;
+      //     contenido     = contenido.toLowerCase();
+      //     var index     = contenido.indexOf(texto);
+      //     if(index != -1){
+      //       // $(".node").removeClass("text-click")
+      //       var this_click = tarjetas.eq(i).find(".image")
+      //       // tarjetas.eq(i).find(".image").click()
+      //       d3.selectAll(this_click).each(function(d, i) {
+      //         var onClickFunc = d3.select(this).on("click");
+      //         onClickFunc.apply(this, [d, i]);
+      //       });
+      //     }
+      //   }
+      // })
+
+      function initSelect2 (data) {
+        // console.log(data)
+        personaje_list = $(".MyBankSearchSelect_personaje .MyBankSearchSelect__list");
+        personaje_list.select2({
+          dropdownParent: $(".MyBankSearchSelect_personaje"),
+          placeholder: "Busca a una persona",
+          multiple: true,
+          maximumSelectionLength: 1,
+          minimumInputLength: 1,
+          data: data,
+          language: {
+            noResults: function(term) {
+              return "No hay resultados";
+            },
+            inputTooShort: function () {
+              dispatch.unhighlightAll();
+              // d3.selectAll("svg").each(function(d, i) {
+              //   var onClickFunc = d3.select("svg").on("click");
+              //   onClickFunc.apply(this, [d, i]);
+              // })
+              return "Busca a una persona";
+            },
+            maximumSelected: function() {
+              return "Haz otra busqueda";
+            }
+          }
+        });
+
+        personaje_list.on('select2:open', function (e) {
+          // events.createNiceScroll();
+          // dom.municipio_list.html('')
+          // document.getElementById("Municipio-search").disabled = true;
+          // $("#Municipio-search").addClass("h-overlay-disabled")
+          $("svg").click()
+        });
+
+        personaje_list.on("select2:select", function (e) {
+          //accion que se ejecuta al buscar
+
+          var data_select = e.params.data;
+          console.log(data_select)
+          var tarjetas = $(".node");
+            // var texto    = $("#search").val();
+            // texto        = texto.toLowerCase();
+            // tarjetas.show();
+            for(var i=0; i<= tarjetas.length; i++){
+              var contenido = tarjetas[i].textContent;
+              // contenido     = contenido.toLowerCase();
+              var index     = contenido.indexOf(data_select.id);
+              if(index != -1){
+                // $(".node").removeClass("text-click")
+                var this_click = tarjetas.eq(i).find(".image")
+                // tarjetas.eq(i).find(".image").click()
+                d3.selectAll(this_click).each(function(d, i) {
+                  var onClickFunc = d3.select(this).on("click");
+                  onClickFunc.apply(this, [d, i]);
+                });
+              }
+            }
+
+          // $('.personaje-item[data-nom-personaje="'+data_select.id+'"]').click()
+          // events.seleccionEntidad()
+        });
+      }
+
+      $(".change_gravity").on("change input", function(e){
+          var val = $(".change_gravity").val();
+          d3.select("#gravityLabel").text(val)
+              force.gravity(val);
+              force.start()
+      })
+
+      $(".change_charge").on("change input", function(e){
+          var val = $(".change_charge").val();
+          d3.select("#chargeLabel").text(val)
+              force.charge("-"+val);
+              force.start()
+      })
 
         // Compute the distinct nodes from the links.
         links.forEach(function (link) {
             link.source = nodes[link.source] || (nodes[link.source] = { name: link.source, image: link.image, image_click: link.image_click, type: link.type, x: link.x, y: link.y });
             link.target = nodes[link.target] || (nodes[link.target] = { name: link.target, image: link.image, image_click: link.image_click, type: link.type, x: link.x, y: link.y });
         });
-        console.log(links);
+        // console.log(links);
         var force = d3.layout.force()
             .nodes(d3.values(nodes))
             .links(links)
@@ -88,11 +187,11 @@ function newFunction() {
             .gravity(0.2)
             .on("tick", tick)
             .start();
-        
+
         var drag = force.drag()
                     .on("dragstart", dragstart);
 
-        force.on("start", function() {                
+        force.on("start", function() {
             node
             .data(force.nodes())
             .attr("cx", function(d) {
@@ -100,8 +199,8 @@ function newFunction() {
                     // d3.select("body")
                     //             .append("text")
                     //     .text(d.x);
-                
-                        
+
+
                     return posX(d.x);
                 })
                 .attr("cy", function(d) {
@@ -155,7 +254,7 @@ function newFunction() {
         // var path = svg.append("svg:g").selectAll("path")
         //     .data(force.links())
         //     .enter().append("svg:path")
-        //     .attr("class", function(d) { return "link " + d.source.parent})
+        //     .attr("class", function(d) { return "link " + d.id.parent})
         console.log(force.links());
         // define the nodes
         var node = svg.selectAll(".node")
@@ -193,10 +292,10 @@ function newFunction() {
                 .on("mouseout", tip.hide)
                 .on('click', function (d) {
                     dispatch.toggleSingle(this, d);
-                }); 
+                });
             }
         //   .on("click", click(0.6))
-        // add the text 
+        // add the text
         node.append("text")
             .attr("x", 10)
             .attr("y", function(d, i) { if (i>0) { return 5 }    else { return 8 } })
@@ -207,14 +306,14 @@ function newFunction() {
         // add the curvy lines
         function tick() {
             // path.attr("d", function(d) {
-            //     var dx =  d.source.x - d.target.x,
-            //         dy = d.source.y - d.target.y,
+            //     var dx =  d.id.x - d.target.x,
+            //         dy = d.id.y - d.target.y,
             //         dr = Math.sqrt(dx * dx + dy * dy);
-            //     return "M" + 
-            //         d.source.x + "," + 
-            //         d.source.y + "A" + 
-            //         dr + "," + dr + " 0 0,1 " + 
-            //         d.target.x + "," + 
+            //     return "M" +
+            //         d.id.x + "," +
+            //         d.id.y + "A" +
+            //         dr + "," + dr + " 0 0,1 " +
+            //         d.target.x + "," +
             //         d.target.y;
             // })
             link
@@ -234,8 +333,8 @@ function newFunction() {
                     return "translate(" + d.x + "," + d.y + ")";
                 })
                 .call(force.drag);
-        } 
-        
+        }
+
         function dblclick(d) {
             d3.select(this).classed("fixed", d.fixed = false);
         }
@@ -253,8 +352,8 @@ function newFunction() {
                     .style("stroke-opacity", 1);
 
                 d3.selectAll('.image')
-                    .attr("xlink:href", function (d) { 
-                        return d.image; 
+                    .attr("xlink:href", function (d) {
+                        return d.image;
                     })
 
                 node
@@ -269,7 +368,7 @@ function newFunction() {
             })
             // toggle the `highlighted` class on element `el`
             .on('toggleSingle', function (el, d) {
-                //   return function(d) {        
+                //   return function(d) {
                 // console.log("toggleSingle");
                 var opacity = 0.5;
                 node
@@ -280,29 +379,29 @@ function newFunction() {
                     })
                     .classed("text-click", function (o) {
                         return isConnected(d, o) ? true : false;
-                        // return o.source === d || o.target === d ? true : false;
+                        // return o.id === d || o.target === d ? true : false;
                     })
                     // .on('click', tip.show)
-                    
+
 
                 d3.selectAll(".link")
                     .style("stroke-opacity", function (o) {
                         return o.source === d || o.target === d ? 1 : opacity;
                     })
                     // .style("stroke-width", function(o) {
-                    //     return o.source === d || o.target === d ? 2 : 1;                
+                    //     return o.id === d || o.target === d ? 2 : 1;
                     // })
                     .classed("link-click", function (o) {
                         return o.source === d || o.target === d ? true : false;
                     });
-                
+
                     d3.selectAll('.image')
-                    .attr("xlink:href", function (o) { 
-                        return isConnected(d, o) ? o.image_click : d.image; 
+                    .attr("xlink:href", function (o) {
+                        return isConnected(d, o) ? o.image_click : d.image;
                     })
-                    
+
                     tip.style("visibility", "hidden");
-                    
+
                     // dispatch.unhighlightAll();
                 // };
             });
@@ -311,7 +410,7 @@ function newFunction() {
             // do nothing if a clickable circle is clicked
             if (d3.select(d3.event.target).classed('image')) {
                 console.log("entró");
-                 
+
                 return;
             }
             else {
@@ -319,7 +418,6 @@ function newFunction() {
                 dispatch.unhighlightAll();
             }
         });
-        
+
     })();
 }
-

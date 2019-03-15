@@ -10,7 +10,3 @@
 2.Descripción de módulos:
 - b2b-nav: Código para los botones de navegación internos (B2B).
 - buscador-entidades: Código para la caja de búsqueda de entidades financieras.
-
-3. Descripción de prod:
-En la carpeta data hay que ponerle "source" a las imágenes
-En el index hay que ponerle "source" a las imágenes, css y js

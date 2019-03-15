@@ -97,7 +97,7 @@ function newFunction() {
         personaje_list = $(".MyBankSearchSelect_personaje .MyBankSearchSelect__list");
         personaje_list.select2({
           dropdownParent: $(".MyBankSearchSelect_personaje"),
-          placeholder: "Busca a una persona",
+          placeholder : "Busca a una persona",
           multiple: true,
           maximumSelectionLength: 1,
           minimumInputLength: 1,

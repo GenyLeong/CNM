@@ -4,7 +4,7 @@ var copy = require('recursive-copy');
 var replace = require('replace');
 
 // Delete all public files
-del(['./public/*']).then(paths => {
+del(['./source/*']).then(paths => {
   console.log('Deleted files and folders:\n', paths.join('\n'));
 
   copyfile();
@@ -43,7 +43,7 @@ var copyfile = function(){
       '!index.html'
     ],
   };
-  copy('src', 'public/source/', options)
+  copy('src', 'source/', options)
     .then(function(results) {
       console.info('Copied ' + results.length + ' files');
     })
@@ -52,7 +52,7 @@ var copyfile = function(){
     });
 
   // Index
-  copy('src', 'public/', {filter: ['index.html']})
+  copy('src', 'source/', {filter: ['index.html']})
     .then(function(results) {
       addSourcePath();
       console.info('Copied ' + results.length + ' files');
@@ -66,7 +66,7 @@ var copyfile = function(){
       replace({
         regex: 'js/',
         replacement: 'source/js/',
-        paths: ['./public/index.html'],
+        paths: ['./index.html'],
         recursive: true,
         silent: true
       });

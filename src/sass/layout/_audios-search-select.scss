@@ -51,6 +51,7 @@ $search-height: 27px;
   }
 
 
+
   // Select 2 styles
   .select2-container--default {
 
@@ -160,5 +161,13 @@ $search-height: 27px;
       background-color: rgb(197, 197, 197);
     }
 
+  }
+}
+.search-div{
+  float:none;
+  display: block;
+  @include breakpoint(phablet_small) {
+      display: inline-block;
+      float:right;
   }
 }

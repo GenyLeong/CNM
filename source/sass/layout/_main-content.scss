@@ -95,6 +95,7 @@ small{
     position: relative;
     top: 4px;
     margin-left: 7px;
+    width: 120px;
     @include breakpoint(phablet_small) {
       display:inline-block
     }

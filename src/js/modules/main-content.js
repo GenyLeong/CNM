@@ -275,7 +275,7 @@ function newFunction() {
                     .attr("height", 20)
                     .on("mouseover", tip.show)
                     .on("mouseout", tip.hide)
-                    // .on("dblclick", tip.show)
+                    .on("dblclick", tip.show)
                     .on('click', function (d) {
                         dispatch.toggleSingle(this, d);
 

@@ -209,7 +209,7 @@ function newFunction() {
                 })
         });
 
-        console.log(d3.values(nodes));
+        // console.log(d3.values(nodes));
         var svg = d3.select("#area2").append("svg")
             .attr("width", width)
             .attr("height", height);
@@ -256,7 +256,7 @@ function newFunction() {
         //     .data(force.links())
         //     .enter().append("svg:path")
         //     .attr("class", function(d) { return "link " + d.id.parent})
-        console.log(force.links());
+        // console.log(force.links());
         // define the nodes
         var node = svg.selectAll(".node")
             .data(force.nodes())

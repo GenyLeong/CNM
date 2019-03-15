@@ -680,7 +680,7 @@ a[href^="tel"] {
  * MainContent
 ----------------------------------------------------------------------------*/
 .MainContent {
-  margin: 20px; }
+  margin: 20px 10px; }
   .MainContent.is-visible {
     display: block; }
   .MainContent-content {
@@ -708,7 +708,6 @@ a[href^="tel"] {
     font: 13px sans-serif;
     pointer-events: none; }
   .MainContent #area2 svg {
-    overflow: unset;
     -ms-touch-action: none;
         touch-action: none;
     margin: auto;
@@ -758,7 +757,7 @@ a[href^="tel"] {
   visibility: hidden;
   font-size: 12px;
   width: auto;
-  max-width: 220px; }
+  max-width: 180px; }
   .tip p {
     margin: 0;
     font-size: 13px; }

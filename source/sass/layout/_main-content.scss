@@ -60,11 +60,14 @@ text {
 
 #area2{
   svg{
-    // overflow: unset;
     touch-action: none;
     margin: auto;
     width: 100%;
     z-index:1;
+    overflow: hidden;
+    @include breakpoint(tablet) {
+      overflow: unset;
+    }
   }
 }
 

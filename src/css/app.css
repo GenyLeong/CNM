@@ -712,7 +712,11 @@ a[href^="tel"] {
         touch-action: none;
     margin: auto;
     width: 100%;
-    z-index: 1; }
+    z-index: 1;
+    overflow: hidden; }
+    @media (min-width: 768px) {
+      .MainContent #area2 svg {
+        overflow: unset; } }
   .MainContent small {
     font-size: 13px;
     display: block;

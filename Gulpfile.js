@@ -87,6 +87,7 @@ gulp.task('watch', function() {
 gulp.task('views', function () {
   return gulp.src([
       './src/views/pages/**/*.pug',
+      '!./src/views/pages/includes/index-content.pug',
       '!./src/views/pages/pse-message/**/*'
     ])
     .pipe(pug({

@@ -19,6 +19,7 @@ function newFunction() {
                                 .append('input')
                                 .classed('change_distance', true)
                                 .attr('type', 'number')
+                                .attr("pattern", "\\d*")
 
         var change_gravity = d3.select("#gravity")
                                 .append('input')

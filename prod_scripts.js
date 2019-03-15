@@ -33,14 +33,9 @@ var copyfile = function(){
       'js/app.js',
 
       // HTML
-      'express-online-*.html',
-      'express-cash-*.html',
-      'message-*.html',
-      'message-voucher-*.html',
-      'message-integration-*.html',
       '!.DS_Store',
-      '!README.html',
-      '!index.html'
+      '!README.html'
+      // '!index.html'
     ],
   };
   copy('src', 'source/', options)
@@ -52,7 +47,7 @@ var copyfile = function(){
     });
 
   // Index
-  copy('src', 'source/', {filter: ['index.html']})
+  copy('src', 'source/')
     .then(function(results) {
       addSourcePath();
       console.info('Copied ' + results.length + ' files');
